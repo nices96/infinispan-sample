@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infinispan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:infinispan:config:5.1"
+		xsi:schemaLocation="urn:infinispan:config:5.1 http://www.infinispan.org/schemas/infinispan-config-5.1.xsd">
+
+	<global>
+		<transport clusterName="infinispan-cluster">
+			<properties>
+				<property name="configurationFile" value="cache2/jgroups.xml" />
+			</properties>
+		</transport>
+	</global>
+	<namedCache name="myCache">
+		<!-- <eviction strategy="LIRS" maxEntries="10" /> -->
+		<clustering mode="dist">
+			<sync />
+			<hash numOwners="2" />
+			<l1 enabled="false" />
+		</clustering>
+	</namedCache>
+</infinispan>
