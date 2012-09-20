@@ -39,7 +39,7 @@
          oob_thread_pool.rejection_policy="discard"/>
          
     <TCPPING timeout="3000"
-        initial_hosts="192.168.1.11[7800],192.168.1.11[7900]"
+        initial_hosts="127.0.0.1[7800],127.0.0.1[7900]"
         num_initial_members="3"
         ergonomics="false" />
  
