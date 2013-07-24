@@ -3,6 +3,7 @@ package org.infinispan.sample.spring;
 import org.infinispan.Cache;
 import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.spring.provider.SpringEmbeddedCacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -28,5 +29,10 @@ public class CacheTestApp1 {
 		cache.put("key7", "value7");
 		cache.put("key8", "value8");
 		cache.put("key9", "value9");
+	}
+	
+	@Cacheable("myCache")
+	public String getTest(String key) {
+		return key + " : value";
 	}
 }
